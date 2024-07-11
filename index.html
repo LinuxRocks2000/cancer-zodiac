@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+
+
+<!--
+    Hi! I see you've found my website source code!
+    You can play around all you want! I've kept it nice and readable, and it doesn't use any frameworks.
+    This project is protected by GNU GPLv3, which basically means that you can't make money by copying it,
+    you have to give me credit if you copy any parts of it, and you have to keep your project open source
+    if you use my code in it.
+    Have fun!
+-->
+
+<html>
+    <head>
+        <title>Weird Pusheen's Cancer Zodiak</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="main.css">
+    </head>
+    <body>
+        <div id="starfield">
+            <!-- absolute positioned starfield at the back. it's mostly randomly generated, but also contains the cancer sprite. -->
+            <div id="cancer-sprite">
+                <img id="c1-stars" src="res/cancer-stars.svg">
+                <svg id="c2-lines" width="247.34239" height="239.99619" viewBox="0 0 65.442673 63.49899" version="1.1" id="svg1"
+                    xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+                    <defs id="defs1" />
+                    <g id="layer1" transform="translate(-42.408394,-52.273198)">
+                        <path style="fill:none;stroke:#ffffff;stroke-width:0.2;stroke-linejoin:round;stroke-dasharray:none"
+                            d="m 62.85164,91.985579 44.34756,8.094881" id="path5" />
+                        <path style="fill:#000000;stroke:#ffffff;stroke-width:0.2;stroke-linejoin:round;stroke-dasharray:none"
+                            d="M 62.85271,92.008778 56.758475,115.41547" id="path6" />
+                        <path style="fill:none;stroke:#ffffff;stroke-width:0.2;stroke-linejoin:round;stroke-dasharray:none"
+                            d="m 43.097026,52.830209 15.942129,25.972334 3.819632,13.184388" id="path4" />
+                    </g>
+                </svg>
+                <img id="c3-crab" src="res/cancer-crab.svg">
+            </div>
+        </div>
+        <div style="height: calc(100vh + 1600px);"></div> <!-- spacer to complete the crab animation (see note in main.js) -->
+        <div class="content-simple-left">
+            <h1>Cancer,</h1>
+            <p id="astroevent">
+                
+            </p>
+            <p id="astroconclusion">
+                
+            </p>
+        </div>
+        <div class="content-simple-right" id="spiky-space-friends">
+            <h2>Crabs: Your Spiky Space Friends</h2>
+            <p>
+                There is astrological reason to believe crabs are actually superintelligent spiky space friends from <b>space</b>!
+            </p>
+            <ul>
+                <li>They're spiky</li>
+                <li>They're friendly</li>
+                <li>They're really smart</li>
+                <li>They're from <b>space</b>!</li>
+            </ul>
+        </div>
+        <div id="planets">
+            <div>
+                <div id="sun" style="top: 100vh; left: 50vw; transform: translate(-50%, -50%);">
+                    <img src="res/sun.svg">
+                </div>
+                <div id="mercury" style="top: 25vh; left: 25vw;--transform-offset: 0px;">
+                    <div class="planetinfo">
+                        <h2>Mercury</h2>
+                        <p>
+                            Mercury is the first planet from our star, Sol! It is almost as small as Earth's moon. It is largely made of iron, and is pocked with craters.
+                        </p>
+                    </div>
+                    <img src="res/mercury.svg">
+                </div>
+                <div id="venus" style="top: 30vh; left: 65vw;--transform-offset: -600px;">
+                    <div class="planetinfo">
+                        <h2>Venus</h2>
+                        <p>
+                            Venus is the second planet from Sol. It is very hot - massive clouds of carbon dioxide (the same greenhouse gas fueling Earth's global warming) and sulfuric acid blanket the surface.
+                            Highs are in the low 450s celcius! The acid rain will burn and even melt your skin, so make sure to bring an umbrella.
+                        </p>
+                    </div>
+                    <img src="res/venus.svg">
+                </div>
+                <div id="earth" style="top: 0vh; left: 20vw;--transform-offset: -1200px;">
+                    <img src="res/earth.svg">
+                    <img src="res/earth_moon.svg" class="moon">
+                    <div class="planetinfo">
+                        <h2>Earth</h2>
+                        <p>
+                            Earth is the third planet from Sol and the only planet known to host life in our solar system! It's where spiky space friends live.
+                        </p>
+                    </div>
+                </div>
+                <div id="mars" style="top: 25vh; left: 50vw;--transform-offset: -1800px;">
+                    <img src="res/mars.svg">
+                    <div class="planetinfo">
+                        <h2>Mars</h2>
+                        <p>
+                            Mars is the fourth planet from Sol. It's very cold, despite the carbon dioxide atmosphere (which is some 100 times thinner than that of Earth), because it is very far from the sun.
+                        </p>
+                    </div>
+                </div>
+                <div id="jupiter" style="top: 25vh; left: 0vw;--transform-offset: -2400px;">
+                    <img src="res/jupiter.svg">scrollDelta / scrollDt * 1000
+                    <div class="planetinfo">
+                        <h2>Jupiter</h2>
+                        <p>
+                            Jupiter is the fifth planet from Sol. It is the largest planet in the solar system; more than twice as massive as all the other planets combined. Jupiter has 95 moons!
+                        </p>
+                    </div>
+                </div>
+                <div id="saturn" style="top: 25vh; left: 75vw;--transform-offset: -3000px;">
+                    <img src="res/saturn.svg">
+                    <div class="planetinfo">
+                        <h2>Saturn</h2>
+                        <p>
+                            Saturn is the 6th planet from Sol. It is famous for its large and prevalent rings, which are mostly made of ice and dust.
+                        </p>
+                    </div>
+                </div>
+                <div id="uranus" style="top: 15vh; left: 0vw;--transform-offset: -3600px;">
+                    <img src="res/uranus.svg">
+                    <div class="planetinfo">
+                        <h2>Uranus</h2>
+                        <p>
+                            Uranus is the 7th planet from Sol. It is mostly made of water, methane, and ammonia, and has a small rocky core. Uranus gets very hot towards the center.
+                        </p>
+                    </div>
+                </div>
+                <div id="neptune" style="top: 15vh; left: 60vw;--transform-offset: -4200px;">
+                    <img src="res/neptune.svg">
+                    <div class="planetinfo">
+                        <h2>Neptune</h2>
+                        <p>
+                            Neptune is the final planet in the solar system. It is large and windy, and orbits every 165 years. It is not visible from Earth, as it is over 30 times further from the sun than our home planet.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="tobetacanceri">
+            <p>
+                <i style="font-size: 0.85rem;">(distances are not to scale)</i><br>
+                The solar system is big. Really big. And the rest of space is even bigger.<br>
+                You scrolled at an average of <b id="rawscroll"></b> pixels per second down this page, or <b id="scrollkph"></b> kilometers per hour through the
+                solar system tour. At that speed, you would reach Beta Cancri (the primary star of the Cancer constellation) in <b id="yearstobetacanceri"></b> <i>years</i>.<br><br>
+                At the fastest I can scroll, the entire human species could evolve again in the time it takes to scroll to the Cancer constellation. Maybe we'll get there - but it won't be soon.<br><br>
+            </p>
+            <div style="height: 25vh;"></div>
+            <div style="text-align: center;"><img src="res/cancer-crab.svg"></div>
+        </div>
+        <div style="height: 200vh;">
+            <div id="thebridge">
+                <p>
+                    Web design by <a href="https://swaous.asuscomm.com/">Tyler Clarke (weird_pusheen)</a>. Headings use the <a href="https://www.fontspace.com/my-earth-font-f49502">"My Earth Regular"</a> font.<br><br>
+                    This is an entry into the Purpose42 art contest for July, centered around zodiac signs. It is not meant to be taken as a serious source of information. Crabs
+                    are not, in fact, superintelligent spiky space friends from space.<br><br>
+                    This is FOSS and protected by GNU GPLv3. You are free to use any element of it in your own projects, so long as they also are FOSS and provide credit to me.
+                    <br><br>
+                    All rights preserved. Trespassers will be violated.<br><br>
+                    <img src="res/shiny.svg">
+                </p>
+            </div>
+        </div>
+        <script src="starfield.js"></script>
+        <script src="main.js"></script>
+    </body>
+</html>

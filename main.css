@@ -1,0 +1,221 @@
+@font-face {
+    font-family: "My Earth Regular";
+    src: url("res/MyEarthRegular.otf");
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+    font-family: sans-serif;
+}
+
+@keyframes shimmer {
+    0% {
+        transform: scale(0.1);
+    }
+    100% {
+        transform: scale(0.2);
+    }
+}
+
+#starfield {
+    background-color: rgb(7, 0, 31);
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.shiny-star {
+    background-image: url("res/shiny.svg");
+    background-size: cover;
+    width: 65px;
+    height: 100px;
+    position: absolute;
+    animation-name: shimmer;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    transition: opacity 2s;
+    opacity: 100%;
+}
+
+.star {
+    width: 2px;
+    height: 2px;
+    border-radius: 100px;
+    background-color: white;
+    position: absolute;
+}
+
+#cancer-sprite {
+    position: absolute;
+    right: 20vw;
+    top: 15vh;
+}
+
+#cancer-sprite > * {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+#c2-lines {
+    --linespoint: 0px;
+    filter: drop-shadow(0px 0px 10px white);
+}
+
+#c2-lines path {
+    stroke-dasharray: var(--linespoint) 1000000px !important;
+}
+
+#c3-crab {
+    --crab-visibility: 0%;
+    opacity: var(--crab-visibility);
+    transform: translate(-20px, -20px);
+    transition: transform 1s;
+}
+
+#c3-crab.dropped {
+    transform: translate(-20px, 200px);
+    z-index: 1000;
+}
+
+#c3-crab.scootleft {
+    transform: translate(-70vw, 200px);
+    transition: transform 2s;
+}
+
+#c3-crab.scootaway {
+    transform: translate(-130vw, 200px);
+    transition: transform 2s;
+}
+
+h1, h2 {
+    color: blue;
+    font-family: "My Earth Regular";
+}
+
+h1 {
+    font-size: 5em;
+}
+
+h2 {
+    font-size: 4em;
+}
+
+p, ul {
+    font-size: 1.5em;
+    color: white;
+}
+
+.content-simple-left {
+    background-color: rgba(255, 255, 255, 0.15);
+    padding-left: 20vw;
+    padding-right: 40vw;
+    padding-top: 20vh;
+    padding-bottom: 20vh;
+}
+
+.content-simple-right {
+    padding-left: 50vw;
+    padding-right: 10vw;
+    padding-top: 20vh;
+    padding-bottom: 20vh;
+}
+
+#bottom {
+    background-color: black;
+    text-align: center;
+    padding-left: 20vw;
+    padding-right: 20vw;
+    padding: 10px;
+    color: white;
+    font-size: 0.8em;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    text-shadow: 0px 0px 3px blue;
+}
+
+.shiny-star.disjoint {
+    position: fixed;
+    opacity: 0%;
+}
+
+#planets {
+    height: calc(4200px);
+    width: 100vw;
+    overflow: clip;
+}
+
+#planets > div > div {
+    --transform-offset: 0px;
+    --scroll-point: inherit;
+    transform: translateZ(calc(var(--scroll-point) * -3px - 200vh + var(--transform-offset)));
+    position: absolute;
+}
+
+#planets > div {
+    perspective: 100px;
+    transform-style: preserve-3d;
+    height: 100vh;
+    width: 100vw;
+    position: sticky;
+    top: 0px;
+    left: 0px;
+}
+
+.planetinfo {
+    background-color: rgba(255, 255, 255, 0.15);
+    padding: 50px;
+    position: absolute;
+    top: 100%;
+    width: 50vw;
+}
+
+@keyframes moonspin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(359deg);
+    }
+}
+
+.moon {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    animation-name: moonspin;
+    animation-duration: 2s; /* 30rpm */
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+#tobetacanceri {
+    background-color: black;
+    padding: 100px;
+    padding-top: 40vh;
+    color: white;
+    font-family: monospace;
+    min-height: 100vh;
+}
+
+#tobetacanceri > * {
+    opacity: calc(100% - 5 * var(--scroll-point));
+}
+
+#thebridge {
+    width: 100vw;
+    height: 100vh;
+    position: sticky;
+    top: 0px;
+    padding: 200px;
+    box-sizing: border-box;
+}
